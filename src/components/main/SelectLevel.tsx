@@ -29,7 +29,7 @@ const SelectLevel: React.FC = () => {
     <div className="relative p-4">
       <button
         onClick={toggleVisibility}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
+        className="bg-accent text-white px-4 py-2 rounded"
       >
         {selectedLevel ? `Selected Level: ${selectedLevel}` : 'Select Level'}
       </button>
