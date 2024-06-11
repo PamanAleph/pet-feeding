@@ -33,7 +33,7 @@ const SelectLevel: React.FC = () => {
   };
 
   const decrementLevel = () => {
-    if (selectedLevel > 0) {
+    if (selectedLevel > 1) {
       setSelectedLevel(selectedLevel - 1);
     }
   };
@@ -42,7 +42,7 @@ const SelectLevel: React.FC = () => {
       <div className="relative p-4">
         <button
             onClick={toggleVisibility}
-            className="bg-accent text-white px-4 py-2 rounded"
+            className="bg-secondary-700 text-white px-4 py-2 rounded"
         >
           {selectedLevel > 0 ? `Selected Level: ${selectedLevel} (${selectedLevel * 10}g)` : 'Select Level'}
         </button>
@@ -53,15 +53,15 @@ const SelectLevel: React.FC = () => {
             } bg-white border-t border-gray-300 rounded-t-lg shadow-lg`}
             style={{ transitionDuration: '500ms', zIndex: 50 }}
         >
-          <div className="p-4 space-y-2 h-48 overflow-y-auto bg-primary text-white">
+          <div className="p-4 space-y-2 h-48 overflow-y-auto bg-primary-600 text-white">
             {/*Text*/}
             <h2 className="text-lg font-semibold text-center">Select Level</h2>
             <div className="py-2 px-3 flex justify-center items-center bg-white border border-gray-200 rounded-lg dark:bg-neutral-900 dark:border-neutral-700">
               <button
                   type="button"
-                  className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                  className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-primary-600 text-text-900 shadow-sm hover:bg-primary-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                   onClick={decrementLevel}
-                  disabled={selectedLevel === 0}
+                  disabled={selectedLevel === 1 || selectedLevel === 0}
               >
                 <svg className="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14"></path>
@@ -75,7 +75,7 @@ const SelectLevel: React.FC = () => {
               />
               <button
                   type="button"
-                  className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                  className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-primary-600 text-text-900 shadow-sm hover:bg-primary-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                   onClick={incrementLevel}
                   disabled={selectedLevel === 10}
               >
@@ -87,7 +87,7 @@ const SelectLevel: React.FC = () => {
             </div>
             <button
                 onClick={handleSave}
-                className="mt-4 bg-accent text-white px-4 py-2 rounded-lg w-full hover:bg-accent-dark"
+                className="mt-4 bg-secondary-700 text-white px-4 py-2 rounded-lg w-full hover:bg-secondary-800"
             >
               Save
             </button>
