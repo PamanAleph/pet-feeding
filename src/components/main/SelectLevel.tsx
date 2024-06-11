@@ -89,7 +89,7 @@ const SelectLevel: React.FC = () => {
                 onClick={handleSave}
                 className="mt-4 bg-accent text-white px-4 py-2 rounded-lg w-full hover:bg-accent-dark"
             >
-              Feed
+              Save
             </button>
           </div>
         </div>
